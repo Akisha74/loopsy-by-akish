@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>О нас — Loopsy by Akish</title>
+<meta name="description" content="История семейной мастерской Loopsy by Akish: вязаные домики и именные миски для питомцев ручной работы.">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+  <div class="page-hero container">
+    <span class="hero-eyebrow">О нас</span>
+    <h1 id="about-title">О нас</h1>
+  </div>
+
+  <section style="padding-top:24px;">
+    <div class="container about-grid">
+      <div class="about-art">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:#4A3327">
+          <path d="M12 30L32 14L52 30" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 27V47C18 48.1046 18.8954 49 20 49H44C45.1046 49 46 48.1046 46 47V27" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div id="about-text"></div>
+    </div>
+  </section>
+
+  <section style="background:var(--cream-soft);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" id="how-title-eyebrow">Процесс</span>
+        <h2 id="how-title">Как сделать заказ</h2>
+      </div>
+      <div class="steps" id="steps" style="max-width:640px;margin:0 auto;"></div>
+    </div>
+  </section>
+
+  <section style="text-align:center;">
+    <div class="container">
+      <h2>Готовы обсудить заказ?</h2>
+      <p style="color:var(--brown-soft);max-width:480px;margin:0 auto 24px;">Расскажите нам о вашем питомце — подберём изделие вместе.</p>
+      <a href="/contacts.html" class="btn btn-primary">Написать нам</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="/js/site.js"></script>
+<script>
+(async function () {
+  const site = await includePartials();
+  document.getElementById("about-title").textContent = site.about_title;
+  document.getElementById("about-text").innerHTML = site.about_text.map((p) => `<p style="font-size:1.05rem;color:var(--brown-soft)">${p}</p>`).join("");
+  document.getElementById("how-title").textContent = site.how_it_works_title;
+  document.getElementById("steps").innerHTML = site.how_it_works
+    .map((step, i) => `<div class="step"><div class="step-num">${i + 1}</div><div>${step}</div></div>`)
+    .join("");
+})();
+</script>
+</body>
+</html>

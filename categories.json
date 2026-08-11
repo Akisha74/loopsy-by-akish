@@ -1,0 +1,37 @@
+[
+  {
+    "id": "yarn-houses",
+    "name": "Вязаные домики",
+    "icon": "house",
+    "description": "Тёплые домики из пряжи ручной вязки — уютное место для отдыха вашего питомца",
+    "status": "available"
+  },
+  {
+    "id": "named-bowls",
+    "name": "Именные миски",
+    "icon": "bowl",
+    "description": "Миски с именем питомца на 3D-печати — прочные, аккуратные, персональные",
+    "status": "available"
+  },
+  {
+    "id": "harnesses",
+    "name": "Шлейки",
+    "icon": "harness",
+    "description": "Удобные шлейки для прогулок",
+    "status": "coming_soon"
+  },
+  {
+    "id": "food-containers",
+    "name": "Контейнеры для влажного корма",
+    "icon": "container",
+    "description": "Герметичные контейнеры для хранения влажного корма",
+    "status": "coming_soon"
+  },
+  {
+    "id": "bag-holders",
+    "name": "Контейнеры для пакетиков",
+    "icon": "bag",
+    "description": "Удобные держатели пакетиков для уборки за питомцем на прогулке",
+    "status": "coming_soon"
+  }
+]

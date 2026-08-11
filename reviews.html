@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Отзывы — Loopsy by Akish</title>
+<meta name="description" content="Отзывы владельцев питомцев об изделиях Loopsy by Akish.">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+  <div class="page-hero container">
+    <span class="hero-eyebrow">Отзывы</span>
+    <h1>Что говорят хозяева питомцев</h1>
+    <p>Нам важно, чтобы каждому питомцу было уютно. Вот что рассказывают наши клиенты.</p>
+  </div>
+
+  <section style="padding-top:24px;">
+    <div class="container">
+      <div class="review-grid" id="review-grid"></div>
+    </div>
+  </section>
+
+  <section style="text-align:center;background:var(--cream-soft);">
+    <div class="container">
+      <h2>Уже заказывали у нас?</h2>
+      <p style="color:var(--brown-soft);max-width:480px;margin:0 auto 24px;">Будем рады вашему отзыву — напишите нам в мессенджер, и мы добавим его на сайт.</p>
+      <a href="/contacts.html" class="btn btn-primary">Оставить отзыв</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="/js/site.js"></script>
+<script>
+(async function () {
+  await includePartials();
+  const reviewsData = await fetchJSON("/content/reviews.json");
+  const reviews = reviewsData.items || [];
+  document.getElementById("review-grid").innerHTML = reviews
+    .map(
+      (r) => `
+    <div class="review-card">
+      <div class="stars">${"★".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</div>
+      <p>${r.text}</p>
+      <div class="review-author">${r.author}</div>
+      <div class="review-pet">Питомец: ${r.pet}</div>
+    </div>`
+    )
+    .join("");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Каталог — Loopsy by Akish</title>
+<meta name="description" content="Каталог изделий Loopsy by Akish: вязаные домики для питомцев и именные миски на 3D-печати. Скоро — шлейки и другие товары.">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+  <div class="page-hero container">
+    <span class="hero-eyebrow">Каталог</span>
+    <h1>Изделия для вашего питомца</h1>
+    <p>Каждое изделие делаем под заказ: имя, размер и цвет — по вашему желанию. Нажмите на карточку, чтобы узнать подробности.</p>
+  </div>
+
+  <section style="padding-top:24px;">
+    <div class="container">
+      <div class="category-strip" id="category-strip"></div>
+      <div class="product-grid" id="catalog-grid"></div>
+      <div class="empty-note" id="empty-note" style="display:none;">Пока нет товаров в этой категории.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Закрыть">✕</button>
+    <div id="modal-inner"></div>
+  </div>
+</div>
+
+<script src="/js/site.js"></script>
+<script src="/js/catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакты — Loopsy by Akish</title>
+<meta name="description" content="Свяжитесь с Loopsy by Akish, чтобы заказать вязаный домик или именную миску для питомца.">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+  <div class="page-hero container">
+    <span class="hero-eyebrow">Контакты</span>
+    <h1>Давайте обсудим ваш заказ</h1>
+    <p>Напишите в мессенджер или заполните форму — ответим в течение дня.</p>
+  </div>
+
+  <section style="padding-top:24px;">
+    <div class="container contact-grid">
+      <div>
+        <ul class="contact-list" id="contact-list"></ul>
+      </div>
+
+      <div class="form-card">
+        <div class="form-success" id="form-success">Спасибо! Мы получили заявку и скоро свяжемся с вами.</div>
+
+        <form name="order-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
+          <input type="hidden" name="form-name" value="order-request" />
+          <p style="display:none;">
+            <label>Не заполняйте это поле: <input name="bot-field" /></label>
+          </p>
+
+          <div class="field">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="Имя" required placeholder="Как к вам обращаться">
+          </div>
+          <div class="field">
+            <label for="phone">Телефон или Telegram</label>
+            <input type="text" id="phone" name="Контакт" required placeholder="+7 900 000-00-00 или @username">
+          </div>
+          <div class="field">
+            <label for="message">Что хотите заказать</label>
+            <textarea id="message" name="Сообщение" rows="4" placeholder="Например: домик для кота, размер средний, цвет бежевый"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+          <p class="form-note">Отправляя форму, вы соглашаетесь на обработку контактных данных для связи с вами по заказу.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="/js/site.js"></script>
+<script>
+(async function () {
+  const site = await includePartials();
+  const c = site.contacts;
+  document.getElementById("contact-list").innerHTML = `
+    <li>${ICONS.whatsapp}<a href="${waLink(c.whatsapp, "Здравствуйте! Хочу узнать про изделия Loopsy by Akish")}" target="_blank" rel="noopener">WhatsApp</a></li>
+    <li>${ICONS.telegram}<a href="https://t.me/${c.telegram}" target="_blank" rel="noopener">Telegram: @${c.telegram}</a></li>
+    <li>${ICONS.instagram}<a href="https://instagram.com/${c.instagram}" target="_blank" rel="noopener">Instagram: @${c.instagram}</a></li>
+    <li>${ICONS.phone}<a href="tel:${c.phone.replace(/[^\d+]/g, "")}">${c.phone}</a></li>
+    <li>${ICONS.mail}<a href="mailto:${c.email}">${c.email}</a></li>
+    <li>${ICONS.pin}<span>${c.city}</span></li>
+    <li>${ICONS.clock}<span>${c.work_hours}</span></li>
+  `.replace(/<svg /g, '<svg class="icon" ');
+
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
+    })
+      .then(() => {
+        document.getElementById("form-success").classList.add("show");
+        form.reset();
+      })
+      .catch(() => {
+        alert("Не получилось отправить форму. Напишите нам в WhatsApp, пожалуйста.");
+      });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loopsy by Akish — вязаные домики и именные миски для питомцев</title>
+<meta name="description" content="Loopsy by Akish — вязаные домики из пряжи и именные миски на 3D-печати для кошек и собак. Изделия ручной работы под вашего питомца.">
+<meta property="og:title" content="Loopsy by Akish — уютные вещи для питомцев ручной работы">
+<meta property="og:description" content="Вязаные домики и именные миски для кошек и собак. Сделано с любовью, под вашего питомца.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="hero-eyebrow">Семейная мастерская</span>
+        <h1 id="hero-title">Уютные вещи для питомцев ручной работы</h1>
+        <p id="hero-subtitle" style="font-size:1.1rem;color:var(--brown-soft);max-width:480px;">Вяжем домики из пряжи и печатаем именные миски на 3D-принтере. Каждое изделие — под вашего любимца.</p>
+        <div class="hero-actions">
+          <a href="/catalog.html" class="btn btn-primary">Смотреть каталог</a>
+          <a href="/about.html" class="btn btn-outline">Узнать о нас</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:#4A3327">
+          <path d="M12 30L32 14L52 30" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 27V47C18 48.1046 18.8954 49 20 49H44C45.1046 49 46 48.1046 46 47V27" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M27 49V38C27 36.8954 27.8954 36 29 36H35C36.1046 36 37 36.8954 37 38V49" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="32" cy="30" rx="6" ry="4.5" fill="#FBF3E6" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Что мы делаем</span>
+        <h2>Популярные изделия</h2>
+      </div>
+      <div class="product-grid" id="featured-grid"></div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="/catalog.html" class="btn btn-outline">Весь каталог</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--cream-soft);">
+    <div class="container about-grid">
+      <div class="about-art">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:#4A3327">
+          <ellipse cx="32" cy="46" rx="16" ry="12" stroke="currentColor" stroke-width="2.6"/>
+          <ellipse cx="14" cy="28" rx="6.5" ry="8" stroke="currentColor" stroke-width="2.6"/>
+          <ellipse cx="27" cy="18" rx="6.5" ry="8" stroke="currentColor" stroke-width="2.6"/>
+          <ellipse cx="41" cy="18" rx="6.5" ry="8" stroke="currentColor" stroke-width="2.6"/>
+          <ellipse cx="52" cy="28" rx="6.5" ry="8" stroke="currentColor" stroke-width="2.6"/>
+        </svg>
+      </div>
+      <div>
+        <span class="hero-eyebrow">О мастерской</span>
+        <h2>Loopsy by Akish — сделано вручную, с теплом</h2>
+        <p id="about-short" style="color:var(--brown-soft);font-size:1.05rem;"></p>
+        <a href="/about.html" class="btn btn-primary" style="margin-top:10px;">Читать нашу историю</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Отзывы</span>
+        <h2>Что говорят хозяева питомцев</h2>
+      </div>
+      <div class="review-grid" id="review-preview"></div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="/reviews.html" class="btn btn-outline">Все отзывы</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--brown);color:var(--cream);text-align:center;border-radius:32px;max-width:1140px;margin:0 auto 72px;">
+    <div class="container">
+      <h2 style="color:var(--cream);">Хотите изделие под своего питомца?</h2>
+      <p style="color:rgba(251,243,230,0.75);max-width:480px;margin:0 auto 24px;">Напишите нам — обсудим размер, цвет и все детали.</p>
+      <a href="/contacts.html" class="btn btn-primary">Связаться с нами</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="/js/site.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>
