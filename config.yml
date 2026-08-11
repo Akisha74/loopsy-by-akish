@@ -6,7 +6,7 @@
 
 backend:
   name: github
-  repo: ВАШ-GITHUB-ЛОГИН/loopsy-by-akish
+  repo: Akisha74/loopsy-by-akish
   branch: main
 
 media_folder: "images/uploads"
